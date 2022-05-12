@@ -12,15 +12,26 @@
   </head>
 
   <body>
-    <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-TW" %>
-    <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
-    
-    <%= render partial: 'home/navbar', locals: { company: Company.all} %>
+
+   <div class="flex">
+      <div>
+          <%= render partial: 'home/sidebar' %>
+      </div>
+      <div class="flex-grow">
+          <%= render partial: 'home/header' %>
+          <%= render partial: 'home/main' %>
+      </div>
+   </div>
+      <%#div class="w-full overflow-y-scroll"> %>
+        <%#= render partial: 'home/header' %>
+        <%#= render partial: 'home/main' %>
+        <%#= yield %>
+
     <div class="container">
       <% if notice %>
         <%= render 'layouts/alerts' %>
       <% end %>
-      <%= yield %>
+
     </div>
   </body>
 </html>

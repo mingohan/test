@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     resources :departments
     resources :bulletins
     resources :vendors
+    resources :dashboards
   end
 end
